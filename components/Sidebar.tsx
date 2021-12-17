@@ -11,6 +11,7 @@ import {
   BellIcon,
   DotsHorizontalIcon,
 } from "@heroicons/react/outline";
+import { signOut } from "next-auth/react";
 
 const Sidebar: React.FC = () => {
   return (
@@ -40,7 +41,10 @@ const Sidebar: React.FC = () => {
       <button className="font-bold text-white rounded-full w-56 h-[52px] hidden xl:block ml-auto bg-[#1d9bf0] text-lg shadow-sm hover:bg-[#1a8cd8]">
         Tweet
       </button>
-      <div className="text-[#d9d9d9] flex items-center justify-center hoverAnimation xl:ml-auto xl:mr- 5 mt-auto">
+      <div
+        className="text-[#d9d9d9] flex items-center justify-center hoverAnimation xl:ml-auto xl:mr- 5 mt-auto"
+        onClick={() => signOut({ redirect: true })}
+      >
         <img
           src={"https://rb.gy/ogau5a"}
           alt="Twitter"
